@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Pulse banner with an animated heartbeat line">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06141B"/><stop offset="1" stop-color="#0B2A2E"/></linearGradient>
+    <pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#34D399" stroke-opacity=".07"/></pattern>
+    <linearGradient id="ln" x1="0" x2="1"><stop offset="0" stop-color="#34D399" stop-opacity="0"/><stop offset=".25" stop-color="#34D399"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <style>
+    text{white-space:pre}
+    .t{font-family:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif}.m{font-family:ui-monospace,Consolas,monospace}
+    .ecg{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s linear infinite}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .dot{animation:blink 1.2s ease-in-out infinite}.d2{animation-delay:.4s}.d3{animation-delay:.8s}
+    @keyframes blink{50%{opacity:.3}}
+    .down{animation:down 3.2s steps(1) infinite}@keyframes down{0%,60%{fill:#34D399}61%,100%{fill:#FB7185}}
+  </style>
+  <rect width="1200" height="320" rx="22" fill="url(#bg)"/><rect width="1200" height="320" rx="22" fill="url(#g)"/>
+  <path class="ecg" filter="url(#glow)" fill="none" stroke="url(#ln)" stroke-width="3" stroke-linejoin="round"
+        d="M0 272 H200 L225 272 L240 238 L258 302 L276 210 L296 272 H520 L545 272 L560 238 L578 302 L596 210 L616 272 H840 L865 272 L880 238 L898 302 L916 210 L936 272 H1200"/>
+  <text x="64" y="112" class="t" font-size="80" font-weight="700" fill="#ECFDF5" letter-spacing="-2">Pulse</text>
+  <text x="66" y="156" class="t" font-size="24" fill="#99F6E4">A free status page that runs entirely on GitHub</text>
+  <text x="66" y="190" class="m" font-size="15" fill="#5EEAD4" opacity=".8">GitHub Actions  →  checks every 5 min  →  GitHub Pages dashboard</text>
+  <g class="m" font-size="14">
+    <rect x="840" y="44" width="300" height="132" rx="14" fill="#06141B" fill-opacity=".7" stroke="#34D399" stroke-opacity=".35"/>
+    <circle class="dot" cx="864" cy="74" r="6" fill="#34D399"/><text x="880" y="79" fill="#ECFDF5">portfolio</text><text x="1060" y="79" fill="#34D399">UP 142ms</text>
+    <circle class="dot d2" cx="864" cy="110" r="6" fill="#34D399"/><text x="880" y="115" fill="#ECFDF5">api.myapp</text><text x="1060" y="115" fill="#34D399">UP  88ms</text>
+    <circle class="dot d3 down" cx="864" cy="146" r="6"/><text x="880" y="151" fill="#ECFDF5">old-blog</text><text x="1060" y="151" fill="#FB7185">DOWN 503</text>
+  </g>
+</svg>
